@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us - Lifestyle Vibes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h2,
+        h3,
+        p {
+            color: #ffffff;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .contact-form {
+            background-color: #1A1A3C;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background-color: #16213E;
+            color: white;
+            border: 1px solid #2C2C54;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #c0c0c0;
+        }
+
+        .btn-send {
+            background-color: #FFD700;
+            color: black;
+            border: none;
+        }
+
+        .btn-send:hover {
+            background-color: #FFC107;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        footer {
+            background-color: #1A1A3C;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #FFC107;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Lifestyle Vibes</strong></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" role="button">Subscribe</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section>
+            <hgroup>
+                <h2>Contact Us</h2>
+                <h3>We’d love to hear from you!</h3>
+            </hgroup>
+            <p>Feel free to reach out through the form below with your inquiries, feedback, or collaborations.</p>
+        </section>
+
+        <!-- Contact Form -->
+        <div class="contact-form text-light">
+            <form id="contactForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="mb-3">
+                    <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="button" class="btn btn-send w-100" data-bs-toggle="modal" data-bs-target="#thankYouModal">
+                    Send
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <small>
+            <a href="https://wa.me/6281510112345" target="_blank">
+                <!-- WhatsApp SVG Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12.04 2c-5.53 0-10 4.48-10 10 0 1.77.48 3.5 1.39 5.01l-1.47 5.4 5.57-1.46c1.46.9 3.12 1.39 4.92 1.39 5.52 0 10-4.48 10-10 0-5.52-4.48-10-10-10zm0 17.93c-1.55 0-3.08-.47-4.37-1.33l-.32-.2-3.29.87.87-3.19-.21-.33c-.85-1.26-1.31-2.7-1.31-4.19 0-4.4 3.6-8 8-8 4.42 0 8 3.6 8 8 0 4.42-3.6 8-8 8zm4.18-5.47l-.99-.2c-.23-.05-.41-.14-.59-.29-.14-.1-.5-.49-.6-.68-.1-.19-.22-.28-.4-.28-.2 0-.44.04-.7.13-.21.06-.34.1-.47.1-.23 0-.45-.13-.68-.37-.21-.21-1.04-1.05-1.08-1.09-.05-.04-.12-.09-.2-.12-.11-.04-.21-.02-.3.02-.1.05-.25.19-.46.51-.3.44-.45.63-.57.72-.12.08-.23.1-.35.08l-1.44-.34c-.12-.03-.23-.1-.32-.21-.09-.12-.11-.27-.07-.43.11-.4.56-1.36 1.3-2.17.46-.5 1-.75 1.61-.75h.02c.13 0 .26.03.38.08.13.05.3.15.52.29.4.26.7.46.91.6.43.27.74.53.91.77.34.5.56 1.14.65 1.92.07.68.01 1.24-.18 1.66-.13.3-.34.53-.63.7-.16.11-.28.21-.4.31z" />
+                </svg>
+                0815 1011 2345
+            </a> •
+            <a href="mailto:dzikoalmadinn@gmail.com">
+                <!-- Email SVG Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 12.713l11.985-6.713v12c0 1.104-.896 2-2 2h-20c-1.104 0-2-.896-2-2v-12l11.985 6.713zm11.985-9.713l-11.985 6.713-11.985-6.713c.001-1.104.896-2 2-2h20c1.104 0 1.999.896 2 2z" />
+                </svg>
+                dzikoalmadinn@gmail.com
+            </a>
+        </small>
+        <br>
+        <small><a href="#">Moch.Dziko</a> • <a href="#">535230219</a></small>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="thankYouModalLabel">Thank You!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for providing input.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="clearForm()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function clearForm() {
+            document.getElementById("contactForm").reset();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lifestyle Theme</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+        /* Custom styling for carousel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        /* Styling for article cards */
+        .article-cards {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            /* Set to 4 columns */
+            margin-top: 1rem;
+        }
+
+        .article-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .article-content {
+            padding: 0.5rem;
+            /* Reduced padding to make cards smaller */
+        }
+
+        .article-category {
+            color: #1a73e8;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .article-title {
+            font-size: 1rem;
+            /* Reduced font size */
+            margin-top: 0.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .article-meta {
+            font-size: 0.75rem;
+            /* Reduced font size */
+            color: #666;
+        }
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 768px) {
+            .article-cards {
+                grid-template-columns: repeat(2, 1fr);
+                /* Two columns on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-cards {
+                grid-template-columns: 1fr;
+                /* One column on very small screens */
+            }
+        }
+
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        footer {
+            background-color: #1A1A3C;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #FFC107;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Lifestyle Vibes</strong></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" role="button">Subscribe</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Welcome to the Lifestyle Hub</h2>
+                    <h3>Explore trends, wellness, and living your best life</h3>
+                </hgroup>
+                <p>
+                    Lifestyle is all about finding balance, embracing health, and living
+                    in the moment. Whether you're into fitness, mindfulness, or just
+                    looking to elevate your daily routines, you've come to the right
+                    place.
+                </p>
+                <div class="carousel-container">
+                    <div class="carousel-images">
+                        <img src="https://images.unsplash.com/photo-1507919909716-c8262e491cde?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Wellness lifestyle">
+                        <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGlmZXN0eWxlJTIwb2ZmaWNlfGVufDB8fDB8fHww"
+                            alt="office">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3"
+                            alt="Healthy living">
+                    </div>
+                </div>
+                <figcaption>
+                    <a href="https://unsplash.com" target="_blank">Photos from Unsplash</a>
+                </figcaption>
+
+                <h3>LIFESTYLE</h3>
+
+                <!-- Article Cards Section -->
+                <div class="article-cards">
+                    <!-- Article Card 1: Fashion -->
+                    <div class="article-card">
+                        <a href="https://www.vogue.com/fashion" target="_blank" rel="noopener noreferrer">
+                            <img src="https://assets.vogue.com/photos/6717d710226ecf895c34012f/4:3/w_1920,c_limit/A27I8979.jpg"
+                                alt="Fashion Style Dziko">
+                            <div class="article-content">
+                                <p class="article-category">STYLE & TRENDS</p>
+                                <h4 class="article-title">Kumpulan Fashion Style Yang Mungkin Bisa Kamu Coba</h4>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Article Card 2: Food -->
+                    <div class="article-card">
+                        <a href="https://www.foodnetwork.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="https://asianfoodnetwork.com/content/dam/afn/global/en/sarah-gastronomic-guide-singapore/avenue-87/AFN_sarah_stb_avenue_87_2.jpg.transform/desktop-img/img.jpg"
+                                alt="Penampilan Hypebeast Oscar">
+                            <div class="article-content">
+                                <p class="article-category">FOOD & RECIPES</p>
+                                <h4 class="article-title">Rahasia Resep Makanan Favorit Untuk Mahasiswa!</h4>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Article Card 3: Health -->
+                    <div class="article-card">
+                        <a href="https://www.healthline.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="https://media.post.rvohealth.io/wp-content/uploads/2019/04/Overhead_Pullup_Female_Tattoo-732x549-Thumbnail.jpg"
+                                alt="Setelan Formal Gen Z">
+                            <div class="article-content">
+                                <p class="article-category">HEALTH & WELLNESS</p>
+                                <h4 class="article-title">Tips Kesehatan Untuk Generasi Muda</h4>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Article Card 4: Career -->
+                    <div class="article-card">
+                        <a href="https://www.forbes.com/careers/" target="_blank" rel="noopener noreferrer">
+                            <img src="https://imageio.forbes.com/specials-images/imageserve/67106cfc6d75e1f1d7c0e369/0x0.jpg?format=jpg"
+                                alt="Pekerjaan Untuk Gen Z">
+                            <div class="article-content">
+                                <p class="article-category">CAREER & SUCCESS</p>
+                                <h4 class="article-title">Panduan Karir Sukses Untuk Gen Z</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section aria-label="Subscribe example">
+        <div class="container">
+            <article>
+                <hgroup>
+                    <h2>Join Our Community</h2>
+                    <h3>Subscribe for the latest lifestyle updates</h3>
+                </hgroup>
+                <form class="grid" id="subscriptionForm">
+                    <input type="text" id="firstname" name="firstname" placeholder="First Name" aria-label="First Name"
+                        required />
+                    <input type="email" id="email" name="email" placeholder="Email" aria-label="Email" required />
+                    <button type="submit">Subscribe</button>
+                </form>
+            </article>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Terimakasih anda telah berlangganan</h3>
+        </div>
+    </div>
+
+    <footer>
+        <small>
+            <a href="https://wa.me/6281510112345" target="_blank">
+                <!-- WhatsApp SVG Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12.04 2c-5.53 0-10 4.48-10 10 0 1.77.48 3.5 1.39 5.01l-1.47 5.4 5.57-1.46c1.46.9 3.12 1.39 4.92 1.39 5.52 0 10-4.48 10-10 0-5.52-4.48-10-10-10zm0 17.93c-1.55 0-3.08-.47-4.37-1.33l-.32-.2-3.29.87.87-3.19-.21-.33c-.85-1.26-1.31-2.7-1.31-4.19 0-4.4 3.6-8 8-8 4.42 0 8 3.6 8 8 0 4.42-3.6 8-8 8zm4.18-5.47l-.99-.2c-.23-.05-.41-.14-.59-.29-.14-.1-.5-.49-.6-.68-.1-.19-.22-.28-.4-.28-.2 0-.44.04-.7.13-.21.06-.34.1-.47.1-.23 0-.45-.13-.68-.37-.21-.21-1.04-1.05-1.08-1.09-.05-.04-.12-.09-.2-.12-.11-.04-.21-.02-.3.02-.1.05-.25.19-.46.51-.3.44-.45.63-.57.72-.12.08-.23.1-.35.08l-1.44-.34c-.12-.03-.23-.1-.32-.21-.09-.12-.11-.27-.07-.43.11-.4.56-1.36 1.3-2.17.46-.5 1-.75 1.61-.75h.02c.13 0 .26.03.38.08.13.05.3.15.52.29.4.26.7.46.91.6.43.27.74.53.91.77.34.5.56 1.14.65 1.92.07.68.01 1.24-.18 1.66-.13.3-.34.53-.63.7-.16.11-.28.21-.4.31z" />
+                </svg>
+                0815 1011 2345
+            </a> •
+            <a href="mailto:dzikoalmadinn@gmail.com">
+                <!-- Email SVG Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 12.713l11.985-6.713v12c0 1.104-.896 2-2 2h-20c-1.104 0-2-.896-2-2v-12l11.985 6.713zm11.985-9.713l-11.985 6.713-11.985-6.713c.001-1.104.896-2 2-2h20c1.104 0 1.999.896 2 2z" />
+                </svg>
+                dzikoalmadinn@gmail.com
+            </a>
+        </small>
+        <br>
+        <small><a href="#">Moch.Dziko</a> • <a href="#">535230219</a></small>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".carousel-images img");
+
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length;
+            document.querySelector(".carousel-images").style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function autoSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        setInterval(autoSlide, 3000); // Set time interval (3000ms = 3 seconds)
+
+        // Modal and Subscription functions
+        document.getElementById("subscriptionForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            document.getElementById("myModal").style.display = "block";
+            // Clear the input fields
+            document.getElementById("firstname").value = '';
+            document.getElementById("email").value = '';
+        });
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+
+</html>
